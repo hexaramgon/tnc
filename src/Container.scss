@@ -1,0 +1,720 @@
+// SCSS variables
+
+
+$green-color: rgb(0,112,60);
+$light-green-color: rgba(0, 112, 60, 0.836);
+$serif-font: Georgia, 'Times New Roman', Times, serif;
+
+*{
+  box-sizing: border-box;
+  font-family: "Inv Maison Neue","Maison Neue",-apple-system,BlinkMacSystemFont,"Open Sans",open-sans,sans-serif;
+}
+
+//////////////////////////
+// Common SCSS classess //
+//////////////////////////
+
+#no-width{
+  width: 0%;
+  transition-delay: 0.5s;
+  height: 0px;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.row-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.col-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.default-button{
+    background-color: $green-color;
+    color: white;
+    height: 60px;
+    width: 160px;
+    border: none;
+    cursor: pointer;
+    margin: 3rem;
+    font-weight: 900;
+    font-size: 12px;
+
+}
+
+.alternate-button{
+  background-color: white;
+  color: $green-color;
+  height: 60px;
+  width: 160px;
+  border: rgb(168, 168, 168) solid 1px;
+  cursor: pointer;
+  margin: 3rem;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.alternate-button:hover{
+  background-color: black;
+  color: white;
+  transition: 0.2s;
+}
+.default-button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+
+#blank-display{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#none{
+    display: none;
+}
+
+.none{
+  display: none;
+}
+
+.text-input{
+    width: 100%;
+    height: 50px;
+    text-decoration: none;
+    border: none;
+    border:  solid rgb(167, 167, 167) 1px;
+    padding-left: 1rem;
+}
+
+.text-input:focus{
+  box-shadow: 0px 0px 26px rgba(96, 236, 255, 0.25);
+  transition: 0.1s;
+  outline: none !important;
+  border:2px solid rgb(55, 158, 243);
+  text-decoration: none;
+}
+
+.select-input{
+  width: 100%;
+  height: 50px;
+  text-decoration: none;
+  border: none;
+  border:  solid rgb(167, 167, 167) 1px;
+  padding-left: 1rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+    font-weight: 800 ;
+    font-size: 12px;
+    letter-spacing: 0.01pt;
+}
+
+.select-wrapper{
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  overflow: scroll;
+  transition: 0.4s ease-in-out;
+}
+.select-options{
+  background-color: white;
+}
+
+.option-input{
+  width: 100%;
+  height: 50px;
+  text-decoration: none;
+  border: none;
+  border:  solid rgb(167, 167, 167) 1px;
+  border-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  .select-input-text{
+    font-weight: 800 ;
+    font-size: 12px;
+    letter-spacing: 0.01pt;
+    margin: 0px;
+  }
+}
+
+.option-input:hover{
+  color: $green-color;
+  background-color: rgb(243, 243, 243) ;
+  transition: 0.2s;
+}
+
+
+//Container CSS Classes 
+
+
+.container{
+  width: 100%;
+  padding: 2rem;
+}
+
+.info-prelude{
+  width: 41%;
+  transition: 0.25s;
+  position: relative;
+  margin-left: 6.5rem;
+  h1{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    font-family: $serif-font;
+  }
+  h2{
+    margin-top: 2rem;
+    font-size: 15px;
+    margin-bottom: 0rem;
+    font-family: $serif-font;
+  }
+  p{
+    margin-top: 0.6rem;
+    margin-bottom: 2.5rem;
+    font-size: 15px;
+    line-height: 1.8;
+    font-family: $serif-font;
+  }
+  b{
+    font-family: $serif-font;
+  }
+}
+
+
+// Carbon Calculator Classes
+
+
+.carb-calc{
+  width: 34%;
+  min-width: 380px;
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.25);
+  right: 60px;
+  margin-left: 9rem;
+  border: 1px solid rgb(207, 206, 206);
+  height: 100%;
+  border-top: 5px solid $green-color;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 5rem;
+  h3{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top:  2rem;
+  }
+  p{
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}
+
+.carb-calc-wrapper{
+  height: 100%;
+  padding: 1rem 4rem 0rem 4rem;
+}
+
+#updated-carb-calc{
+  width: 63%;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+  margin-left: 6rem;
+}
+
+.graph-display{
+  position: fixed;
+  z-index: 7;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.493);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .more-info-graph{
+    height: 90vh;
+    width: 68vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    h1{
+      font-size: 15px;
+      font-weight: 800;
+      margin-top: 2rem;
+    }
+    h2{
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .info-box{
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+    p{
+      font-size: 13px;
+    }
+    .info-gaze{
+      display: flex;
+      align-items: center;
+      width: 200px;
+    }
+  }
+}
+.button-row{
+justify-content: space-around;
+}
+
+.cc-header{
+  text-align: center;
+  width: 100%;
+
+  h1{
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+
+  }
+}
+
+.cc-navbar{
+  height: 52px;
+  width: 100%;
+  background-color: rgb(248,248,248);
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  .sub-icon{
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s;
+    h4{
+      font-size: 12px;
+      font-weight: 800;
+      color: $green-color;
+    }
+  }
+  .sub-icon:hover{
+    background-color: rgb(230, 230, 230);
+    border-bottom: $green-color solid 5px;
+  }
+}
+#selected{
+  border-bottom: $green-color solid 5px;
+  h4{
+    color: black;
+  }
+}
+
+.travel-wrapper{
+  text-align: center;
+  h2{
+    font-size: 20px;
+  }
+}
+
+.rightgraph-transition{
+  transition: 0.5s;
+  transition-delay: 0.7s;
+}
+
+#test{
+  transition: 0.25s;
+  opacity: 0;
+}
+
+#test-2{
+  transition: 0.25s;
+  opacity: 1;
+}
+
+.ccGraph{
+  position: fixed;
+  right: 8rem;
+  top:3rem;
+  width: 14%;
+  h3{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  p{
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+  }
+  a{
+    text-align: center;
+    font-size: 13px;
+    height: 10px;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+    font-weight: 300;
+    text-align: center;
+  }
+  .link{
+    font-weight: 700;
+    color: $green-color;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.small-graph-wrapper{
+  width: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  p{
+    font-size: 12px;
+    text-align: center;
+  }
+  h4{
+    margin: 0px;
+    font-weight: 900;
+    font-size: 10px;
+  }
+  #special-size{
+    font-size: 28px;
+  }
+}
+
+.small-graph{
+  width: 50px;
+  height: 65px;
+  background-color: rgb(0,158,203);
+  border-radius: 5px;
+}
+
+.light-blue{
+  background-color: rgb(0,158,203);
+}
+
+.light-grey{
+  background-color: #cdcdcd;
+}
+.graph-row{
+  justify-content: space-evenly;
+}
+
+.vehicle-box{
+  border: rgb(221, 221, 221) solid 1px;
+  margin: 2rem;
+  position: relative;
+  padding: 1rem 6rem 4rem 6rem;
+  text-align: left;
+  h2{
+    font-family: $serif-font;
+    font-weight: 300;
+    font-size: 22px;
+  }
+}
+
+.vehicle-delete-button{
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  display: flex;
+  transition: 0.2s;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.vehicle-delete-button:hover{
+  background-color: rgb(219, 219, 219);
+}
+
+.half-width{
+  width: 45%;
+}
+
+.input-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-text{
+  font-size: 13px !important;
+  font-style: italic;
+  font-weight: 400 !important;
+  letter-spacing: 0.01pt !important;
+  margin-bottom: 3rem;
+
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  border:rgb(167, 167, 167) 1px solid;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 4px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 34px;
+  width: 122px;
+  left: 2px;
+  bottom: 2px;
+  background-color: $green-color;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 2px;
+}
+
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(122px);
+  -ms-transform: translateX(122px);
+  transform: translateX(122px);
+}
+
+.switch-wrapper{
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.switch-simple{
+  position: absolute;
+  top: -2px;
+  left: 36px;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  color: white;
+  transition: 0.1s;
+  transition-delay: 0.1s;
+  cursor: pointer;
+
+}
+.switch-advanced{
+  position: absolute;
+  top: -2px;
+  left: 150px;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.1s;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+
+.home-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.trashicon{
+  height: 20px;
+  width: auto;
+}
+
+.down-icon{
+  height: 14px;
+  width: auto;
+  position: absolute;
+  right: 20px;
+  top: 18px
+}
+
+.vehicle-sub-text{
+  text-align: left;
+  margin-left: 2rem;
+  margin-bottom: -1rem;
+  margin-top: 2rem;
+  font-weight: 800;
+}
+
+.home-wrapper{
+  text-align: left;
+  h2{
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.ccslider{
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 89%; /* Full-width */
+  height: 7px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.ccslider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 28px; /* Set a specific slider handle width */
+  height: 28px; /* Slider handle height */
+  border-radius: 30px;
+  background: rgb(0, 88, 0); /* Green background */
+  // background-image: url("./components/test.png");
+  cursor: pointer; /* Cursor on hover */
+}
+
+.left-home-input{
+  width: 50%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  p{
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 6px;
+  }
+}
+
+.right-home-input{
+  width: 40%;
+  p{
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 6px;
+  }
+}
+
+.slidecontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+p{
+  font-size: 12px;
+}
+h4{
+  font-size: 14px;
+  margin: 0px;
+}
+}
+
+.outer-question{
+  text-align: left;
+  width: 100%;
+}
+
+.ccslider:hover{
+  background: #979797; /* Grey background */
+}
+
+.slide-tick{
+  width: 80px;
+  text-align: center;
+}
+
+.shopping-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.graph-section{
+  margin: 1rem;
+  text-align: center;
+  .di-graph{
+    display: flex;
+    align-items: flex-end;
+    height: 250px;
+  }
+  .results-page-graph{
+    width: 70px;
+    margin: 0.2rem;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .results-page-graph:hover{
+    transform: scale(1.1, 1.1);
+  }
+  h3{
+    font-size: 13px;
+    font-weight: 700;
+  }
+  h4{
+    font-family: $serif-font;
+    font-size: 32px;
+    font-weight: normal;
+    margin: 0px;
+  }
+}
+
+.exit-icon{
+  width: 15px;
+  height: auto;
+}
+
+.exit-icon-container{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  
+}
+
+.exit-icon-container:hover{
+background-color: rgb(196, 196, 196);
+}
