@@ -6,18 +6,18 @@ import Switch from '../CustomAssets/Switch';
 //Shopping Page for the Calculator. 
 const Shopping = () => {
 
-  const [test, settest] = useState("test");
+  const [animation, setAnimation] = useState("animation");
 
 
   useEffect(() => {
     var delayInMilliseconds = 100; //1 second
     setTimeout(function() {
-      settest("test-2")
+      setAnimation("animation-2")
     }, delayInMilliseconds);    }
- , [test]);
+ , [animation]);
     
     return (
-      <div className="shopping-wrapper" id={test}>
+      <div className="shopping-wrapper" id={animation}>
         <Switch></Switch>
         <h2>In a given month, about how much do you spend on the following?</h2>
         <div style={{width:"100%"}}>

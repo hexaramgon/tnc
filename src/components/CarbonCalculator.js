@@ -49,7 +49,7 @@ const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs}) => {
   return (
     <div className="full-width">
       <div className={page === 0 ? "none" : "cc-header"}>
-        <div id={page ? "" : "test"}>
+        <div id={page ? "" : "animation"}>
           <h1>Carbon Footprint Calculator</h1>
         </div>
         <div className="cc-navbar row-wrapper"> 

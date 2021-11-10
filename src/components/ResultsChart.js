@@ -25,7 +25,6 @@ function closestrange(int) {
 }
 
 
-
 export default ResultChart;
 
 

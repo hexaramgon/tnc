@@ -5,7 +5,7 @@ const Results = () => {
     
     return (
       <div className="wrapper">
-        <h1>FOOD</h1>
+        <h1>Results Page</h1>
       </div>
     );
 }

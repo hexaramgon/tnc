@@ -5,7 +5,7 @@ import Dropdown from '../CustomAssets/Dropdown';
 const Home = () => {
 
 
-  const [test, settest] = useState("test");
+  const [animation, setAnimation] = useState("animation");
   const [unit, setUnit] = useState(undefined);
   const [water, setWater] = useState(undefined);
 
@@ -15,13 +15,13 @@ const Home = () => {
   useEffect(() => {
     var delayInMilliseconds = 100; //1 second
     setTimeout(function() {
-      settest("test-2")
+      setAnimation("animation-2")
     }, delayInMilliseconds);    }
- , [test]);
+ , [animation]);
 
     
     return (
-      <div className="home-wrapper" id={test}>
+      <div className="home-wrapper" id={animation}>
         <Switch></Switch>
         <div className="outer-question">
           <h2>How much do you spend on electricity?</h2>

@@ -4,12 +4,39 @@ import React, { useState } from 'react';
 const Slider = ({unit, avg, title}) => {
 
 
-    const [value, setValue] = useState("1");
+  //////////////////////////////////////////
+  //              ARGUEMENTS              //
+  //////////////////////////////////////////    
+
+  //----units----
+  //A string that will display the units when the range is displaying numbers
+
+
+  //----avg----
+  //A float representing the avergage that will be used for calcluations based on slider position.
+
+  //----title----
+  //A string for the title of the slider
+
+
+
+  //////////////////////////////////////////
+  //        JAVASCRIPT FUNCTIONS          //
+  //////////////////////////////////////////
+
+
+    const [value, setValue] = useState("1");  //Default slider value is average
 
     function handleChange(event) {
         setValue(event.target.value)
     }
 
+
+
+
+    //////////////////////////////////////////
+    //             HTML RENDER              //
+    //////////////////////////////////////////
     
     return (
     <div class="slidecontainer">
@@ -32,7 +59,6 @@ const Slider = ({unit, avg, title}) => {
             <h3 className="slide-tick">2x Average</h3>
             <h3 className="slide-tick">3x Average</h3>
         </div>
-
     </div>
     );
 }

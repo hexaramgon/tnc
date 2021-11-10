@@ -16,7 +16,6 @@ const Intro = ({page}) => {
         if (page !== 0){
             var delayInMilliseconds = 250; //1 second
             setTimeout(function() {
-                console.log('sg')
                 return "none"
             }, delayInMilliseconds);
         } else{

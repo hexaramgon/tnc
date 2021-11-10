@@ -4,7 +4,7 @@ import Dropdown from '../CustomAssets/Dropdown';
 const Started = ({nextPage, funcs}) => {
 
 
-  const [test, settest] = useState("");
+  const [animation, setAnimation] = useState("");
   const [people, setPeople] = useState(undefined);
   const [income, setIncome] = useState(undefined);
   const [location, setLocation] = useState('');
@@ -62,7 +62,7 @@ const Started = ({nextPage, funcs}) => {
 
 
   function tester() {
-      settest("test");
+    setAnimation("animation");
       var delayInMilliseconds = 250; //1 second
       setTimeout(function() {
         const loc = funcs[0]
@@ -72,11 +72,11 @@ const Started = ({nextPage, funcs}) => {
   };
     
       return (
-        <div className="wrapper" id = {test}>
+        <div className="wrapper" id = {animation}>
           <h1>Get Started</h1>
           <p>Start by telling us about your household. We'll use this to fill in the calculator with some assumptions about your footprint. You can adjust as you go to see how you compare.</p>
           <h3>Where do you live?</h3>
-          <input className="text-input" value={location} onInput={e => setLocation(e.target.value)} placeholder = "Enter City or Zip Code" type="text" id="fname" name="fname"/>
+          <input className="text-input" value={location} onInput={e => setLocation(e.target.value)} placeholder = "Enter City or Zip Code" type="text" id="location" name="location"/>
           <h3>How many people live in your household?</h3>
           <Dropdown 
             placeholder={"SELECT NUMBER OF PEOPLE"} 

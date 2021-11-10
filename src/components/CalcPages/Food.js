@@ -5,20 +5,20 @@ import Slider from "../CustomAssets/Range";
 const Food = () => {
 
 
-  const [test, settest] = useState("test");
+  const [animation, setAnimation] = useState("animation");
 
 
 
   useEffect(() => {
     var delayInMilliseconds = 100; //1 second
     setTimeout(function() {
-      settest("test-2")
+      setAnimation("animation-2")
     }, delayInMilliseconds);    }
- , [test]);
+ , [animation]);
 
     
       return (
-        <div className="travel-wrapper" id = {test}>
+        <div className="travel-wrapper" id = {animation}>
           <h2>How much does the average person in your household eat?</h2>
           <div>
           <Slider

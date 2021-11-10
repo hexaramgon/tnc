@@ -14,6 +14,16 @@ This is the TNC Version of the Cool Climate Carbon Calculator. Created during th
               CalcPages  ------- Contain (Custom Assets)
                      
 
+To start working on the app. Simply run:
+
+`git clone git@github.com:hexaramgon/tnc.git` for ssh
+
+`https://github.com/hexaramgon/tnc.git` otherwise
+
+`npm install`
+
+`npm start`
+
 ## Relavent Links
 
 Web-Mock-Up:
@@ -70,6 +80,16 @@ Holds all the different pages that the CarbonCalculator renders.
 This holds all the custom UI components such as dropdown menu and slider bars that deviate from their orginal representation
 
 ## TO-DO
+
+### Bug Fixes:
+There are a few notable bugs right now in the app. Most notable odf which include
+
+1: When pressing the next button. The API function is triggered, but an error occurs in parsing, causing the react app to crash.
+
+2: The Animation timing is off. 
+
+3:... Feel free to add more as you find them.
+
 
 ### Responsiveness:
 

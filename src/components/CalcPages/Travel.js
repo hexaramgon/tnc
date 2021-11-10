@@ -6,7 +6,7 @@ import trashicon from '../svgs/trash-347.svg'
 const Travel = () => {
 
 
-  const [test, settest] = useState("test");
+  const [animation, setAnimation] = useState("animation");
   const [vehicles, setVehicles] = useState([0]);
   const [count, setCount] = useState(1);
 
@@ -15,9 +15,9 @@ const Travel = () => {
   useEffect(() => {
       var delayInMilliseconds = 100; //1 second
       setTimeout(function() {
-        settest("test-2")
+        setAnimation("animation-2")
       }, delayInMilliseconds);    }
-   , [test]);
+   , [animation]);
 
   function addVehicle() {
     setVehicles([...vehicles, String(count)])
@@ -32,7 +32,7 @@ const Travel = () => {
 
     
       return (
-        <div className="travel-wrapper" id = {test}>
+        <div className="travel-wrapper" id = {animation}>
           <h2>How do you get around?</h2>
           <h5 className="vehicle-sub-text">YOUR VEHICLES</h5>
           {vehicles.map((item, index) => <Vehicle key={item} index={index} removeVehicle={removeVehicle}></Vehicle>)}
@@ -67,11 +67,11 @@ function Vehicle ({index, removeVehicle}) {
           >
           </Dropdown>       
           <h3>Miles Per Gallon</h3>        
-          <input className="text-input" type="text" id="fname" name="fname"/>
+          <input className="text-input" type="text" id="mpg" name="mpg"/>
           <div className="row-wrapper input-row">
             <div className="half-width">
               <h3>Miles Driven</h3>        
-              <input className="text-input" type="text" id="fname" name="fname"/>
+              <input className="text-input" type="text" id="md" name="md"/>
             </div>
             <div className="half-width">
               <h3>Frequency</h3>        
