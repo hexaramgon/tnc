@@ -1,5 +1,5 @@
 
-import CarbCacl from './components/CarbonCalcultor';
+import CarbCacl from './components/CarbonCalculator';
 import {useState} from 'react';
 import './Container.scss';
 import CCgraph from './components/Ccgraph';

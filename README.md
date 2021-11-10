@@ -1,9 +1,111 @@
+# TNC Calculator App
+
+This is the TNC Version of the Cool Climate Carbon Calculator. Created during the Fall of 2021 at UC Berkeley. 
+
+                                Containier.js
+                              /       |       \   ResultsChart
+                             /        |        \     /|\ 
+                            /         |         \     | (toggles)
+            CarbonCalculator.js   Intro.js    CCgraph.js
+                  |  
+                  |  
+                  |
+                  |
+              CalcPages  ------- Contain (Custom Assets)
+                     
+
+## Relavent Links
+
+Web-Mock-Up:
+https://projects.invisionapp.com/share/6TY2U0GUX2F#/425168867_CC_-_Get_Started
+
+Mobile-Mock-Up:
+https://www.figma.com/file/3qYdQMz3HDH7YVNizWql6S/Carbon-Calculator
+
+Cool-Climate-API:
+https://api-central.berkeley.edu/api/11
+
+React-Hooks:
+https://reactjs.org/docs/hooks-intro.html
+
+## Structure
+
+### Containier.scss
+
+SCSS file for all of Calculator files. File is split up accordingly to section.
+
+### Containier.js
+
+Container.js contains the Container Function which renders a React Component that will hold all of the the TNC Calculator global states as well as the API function calls. This Component is IMPORTANT as any react hooks that change the global state should be passed downstream from here.
+For instance:
+`const [inputSize, setInputSize] = useState("3");`
+Sets a react hook `inputSize` and it's function to change it as `setInputSize` with a default value of 3. 
+`inputSize` is a value that will be passed into the API function call, and shouldn't have to be referenced anywhere else. 
+`setInputSize` on the other hand should be passed downstream to the Carbon Calculator and later on to the corrosponding Page, which in this case is Started.js
+Any change of InputSize will now be refelcted in the global state despite the change occuring in a child, and have the correct API parameters called when we want updated results.
 
 
+#### CarbonCalculator.js
 
-# Getting Started with Create React App
+CarbonCalculator.js is the wrapper that loads all the different pages to dispaly for the user.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### CCgraph.js
+
+Graph that is shown to the right of the Carbon Calculator when going through the process of entering items into the calculator.
+
+#### Intro.js
+
+Renders the text that is shown at teh start of starting the calculator.
+
+#### ResultsChart
+
+This is the full-size chart that is only shown when you want to toggle it. Overlay is presented when viewing it and makes CarbonCalculator unclickable.
+
+#### CalcPages
+
+Holds all the different pages that the CarbonCalculator renders.
+
+#### Custom Assets
+
+This holds all the custom UI components such as dropdown menu and slider bars that deviate from their orginal representation
+
+## TO-DO
+
+### Responsiveness:
+
+Currently the Web-App lacks resonsiveness, in terms of mobile and tablet scalability.
+The UI guide for both can be found in this figma file:
+https://www.figma.com/file/3qYdQMz3HDH7YVNizWql6S/Carbon-Calculator
+Feel free to add any scss classes or depedencies that'll get the job done.
+
+### Simple-Advanced Switchbars:
+
+This is a feature that still needs to be integrated.
+The Switch component functions correctly but needs to toggle other page with different API parameters.
+
+
+### Results Page:
+
+The Results Page also needs to be integrated, and the UI design can be found here:
+https://projects.invisionapp.com/share/6TY2U0GUX2F#/425168867_CC_-_Get_Started
+
+
+### Finishing API-Integration:
+
+Currently only the Started Page has the API integrated within it. The rest of the pages need their API integrated so that whenever a user switches out of a page, the API gets an update, and corrosponding states are updated accordingly. 
+
+
+### Creating UI Limits/Restrictions:
+
+Some UI Components need limits and Syntax shown:
+eg. Vehicles should only be limited to 4 max vehicles.
+Input Fields Shouls have a character limit.
+Input Fields should also check for valid parameters.
+
+### I-Frame Wrapper
+
+Need to wrap whole app under an Iframe, and have it able to export as so.
+
 
 ## Available Scripts
 
