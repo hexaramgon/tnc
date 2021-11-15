@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import tdownicon from '../svgs/arrow-down-3101.svg'
+import tdownicon from '../../svgs/arrow-down-3101.svg'
 
 //Class for custom Dropdown
 const Dropdown = ({ value, options, placeholder = "Select", onChange }) => {

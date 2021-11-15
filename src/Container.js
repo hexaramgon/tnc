@@ -5,7 +5,7 @@ import './Container.scss';
 import CCgraph from './components/Ccgraph';
 import Intro from './components/Intro';
 import ResultChart from './components/ResultsChart';
-import exit from './components/svgs/close-x-10324.svg'
+import exit from './svgs/close-x-10324.svg'
 import axios from "axios";
 
 //Container.js is the catch all for the codebase. This is where we commuincate with the API and set the pages of the calculator/ The Results offset.
