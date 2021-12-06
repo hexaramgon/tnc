@@ -422,7 +422,7 @@ justify-content: space-around;
     height: 250px;
   }
   .results-page-graph{
-    width: 70px;
+    width: 5vw;
     margin: 0.2rem;
     transition: 0.3s;
     cursor: pointer;
@@ -918,6 +918,9 @@ background-color: rgb(196, 196, 196);
   }
   .cc-navbar{
     width: 500px;
+  }
+  .info-bar{
+    flex-direction: column;
   }
   .carb-calc-wrapper{
     padding: 1rem 1rem 0rem 1rem;

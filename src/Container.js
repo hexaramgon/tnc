@@ -118,7 +118,7 @@ function Container() {
             <img alt="" src={exit} className="exit-icon"/>
           </div>
           <h1>YOUR CARBON FOOTPRINT</h1>
-          <div className="row-wrapper">
+          <div className="info-bar row-wrapper">
             <div className="row-wrapper info-gaze">
               <div className="info-box light-blue">
               </div>
@@ -130,7 +130,7 @@ function Container() {
               <h2>SIMILAR HOUSEHOLDS</h2>
             </div>
           </div>
-          <p>Click/tap on bars to see more details. View documentation for detailed methodology.</p>
+          <p style={{textAlign:"center"}}>Click/tap on bars to see more details. View documentation for detailed methodology.</p>
           <ResultChart></ResultChart>
         </div>
       </div>
