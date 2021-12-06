@@ -84,6 +84,7 @@ function Container() {
       //PARSING Since API Results are returned as XML File
       axios.get(url).then((response) => {
         var res = response.data
+        console.log(res);
         let parser = new DOMParser();
         var xmlDoc = parser.parseFromString(res, 'text/html')
         var result = Math.round(xmlDoc.getElementsByTagName("result_grand_total")[0].innerHTML)

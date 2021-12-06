@@ -5,6 +5,8 @@ import Travel from './CalcPages/Travel';
 import Home from './CalcPages/Home';
 import Results from './CalcPages/Results';
 import Food from './CalcPages/Food';
+import CCgraph from '../components/Ccgraph';
+
 
 //Carbon Calculator Wrappper to render different pages and handle page changes
 //Also in charge of updating API Call whenever next button is clicked or navbar is clicked
@@ -52,26 +54,31 @@ const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs}) => {
         <div id={page ? "" : "animation"}>
           <h1>Carbon Footprint Calculator</h1>
         </div>
-        <div className="cc-navbar row-wrapper"> 
-          <section className="sub-icon" id = {page === 1 ? "selected" : ""} onClick={()=>selectPage(1)}> 
-            <h4>TRAVEL</h4>
-          </section>
-          <section className="sub-icon" id = {page === 2 ? "selected" : ""} onClick={()=>selectPage(2)}> 
-            <h4>HOME</h4>
-          </section>
-          <section className="sub-icon" id = {page === 3 ? "selected" : ""} onClick={()=>selectPage(3)}> 
-            <h4>FOOD</h4>
-          </section>
-          <section className="sub-icon" id = {page === 4 ? "selected" : ""} onClick={()=>selectPage(4)}> 
-            <h4>SHOPPING</h4>
-          </section>
-          <section className="sub-icon" id = {page === 5 ? "selected" : ""} onClick={()=>selectPage(5)}> 
-            <h4>RESULTS</h4>
-          </section>
+        <div className="cc-navbar-wrapper">
+          <div className="cc-navbar row-wrapper"> 
+            <section className="sub-icon" id = {page === 1 ? "selected" : ""} onClick={()=>selectPage(1)}> 
+              <h4>TRAVEL</h4>
+            </section>
+            <section className="sub-icon" id = {page === 2 ? "selected" : ""} onClick={()=>selectPage(2)}> 
+              <h4>HOME</h4>
+            </section>
+            <section className="sub-icon" id = {page === 3 ? "selected" : ""} onClick={()=>selectPage(3)}> 
+              <h4>FOOD</h4>
+            </section>
+            <section className="sub-icon" id = {page === 4 ? "selected" : ""} onClick={()=>selectPage(4)}> 
+              <h4>SHOPPING</h4>
+            </section>
+            <section className="sub-icon" id = {page === 5 ? "selected" : ""} onClick={()=>selectPage(5)}> 
+              <h4>RESULTS</h4>
+            </section>
+          </div>
         </div>
       </div>
       <div className="carb-calc-wrapper">
         {pages[page]}
+      </div>
+      <div style={{position:"relative"}}>
+        {/* <CCgraph></CCgraph> */}
       </div>
       <hr id = {page ? "" : "none" }></hr>
       <div className="row-wrapper button-row" id = {page ? "" : "none" }>
