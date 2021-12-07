@@ -2,10 +2,8 @@ import CarbCacl from './components/CarbonCalculator';
 import {useState} from 'react';
 import './Container.scss';
 import CCgraph from './components/Ccgraph';
-import Intro from './components/Intro';
 import ResultChart from './components/ResultsChart';
 import exit from './svgs/close-x-10324.svg'
-import axios from "axios";
 import * as APILib from '@coolclimate/calculator-api';
 
 //Container.js is the catch all for the codebase. This is where we commuincate with the API and set the pages of the calculator/ The Results offset.
@@ -27,10 +25,10 @@ function Container() {
   //INPUTS FOR API 
   //USES FOLLOWING FORMAT:
   //const [apioption, functiontochangeapioption] = useState(defaultvalue)
-  const [inputLocationMode, setInputLocationMode] = useState("1");
+  const [inputLocationMode, setInputLocationMode] = useState(1);
   const [inputLocation, setInputLocation] = useState("94703");
-  const [inputIncome, setInputIncome] = useState("7");
-  const [inputSize, setInputSize] = useState("3");
+  const [inputIncome, setInputIncome] = useState(7);
+  const [inputSize, setInputSize] = useState(3);
   const funcs = [setInputLocation, setInputIncome, setInputSize]
   
 
@@ -70,15 +68,20 @@ function Container() {
   function APIgrab() {
     /** Note From Yunhao(Cookie):
      * I've changed this to use the APILib
+     * 
      * To be able to implement more input features, use APILib.COMPUTE_FOOTPRINT_API() instead of current class
      * But you need to use APILib.GET_DEFAULTS_AND_RESULTS_API() first to be able to get default inputs.
+     * 
+     * I wrapped up some parameters by parseInt because sometimes typescript runtime does type check, 
+     * just now that during implemention its best to use appropriate type in the actual compnents, as
+     * it tends to keep everything cleaner
      */
     let APICaller = new APILib.GET_DEFAULTS_AND_RESULTS_API();
     APICaller.callAPI({
-      input_location_mode: inputLocationMode,
-      input_income: inputIncome,
+      input_location_mode: parseInt(inputLocationMode),
+      input_income: parseInt(inputIncome),
       input_location: inputLocation,
-      input_size: inputSize
+      input_size: parseInt(inputSize)
     }).then((returnVal) => {
       setGrandTotal(Math.round(returnVal.result_grand_total));
     });
