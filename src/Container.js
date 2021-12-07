@@ -7,6 +7,7 @@ import Intro from './components/Intro';
 import ResultChart from './components/ResultsChart';
 import exit from './components/svgs/close-x-10324.svg'
 import axios from "axios";
+import * as APILib from '@coolclimate/calculator-api';
 
 //Container.js is the catch all for the codebase. This is where we commuincate with the API and set the pages of the calculator/ The Results offset.
 //In Short Container.JS is the parent of all the subsequent React Components and is the single source of truth.
@@ -68,26 +69,19 @@ function Container() {
 
   //Grabs from API
   function APIgrab() {
-    //URL IS THE API URL WITH ALL THE INPUTS DISPERSERED ACCORDINGLY
-    const url =
-      "https://apis.berkeley.edu/coolclimate/footprint-defaults?input_location_mode=" + inputLocationMode +  "&input_location=" + inputLocation +"&input_income=" + inputIncome  + "&input_size=" + inputSize;
-      const config = {
-        headers: {
-          "Content-Type": "application/xml",
-        },
-      };
-      // Add Your Key Here!!!
-      axios.defaults.headers.common = {
-        "app_id" : " 5869deed",
-        "app_key": "146ad336ff00822c29c03effcf70cefd",
-      };
-      //PARSING Since API Results are returned as XML File
-      axios.get(url).then((response) => {
-        var res = response.data
-        let parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(res, 'text/html')
-        var result = Math.round(xmlDoc.getElementsByTagName("result_grand_total")[0].innerHTML)
-        setGrandTotal(result) // Apply baseline
+    /** Note From Yunhao(Cookie):
+     * I've changed this to use the APILib
+     * To be able to implement more input features, use APILib.COMPUTE_FOOTPRINT_API() instead of current class
+     * But you need to use APILib.GET_DEFAULTS_AND_RESULTS_API() first to be able to get default inputs.
+     */
+    let APICaller = new APILib.GET_DEFAULTS_AND_RESULTS_API();
+    APICaller.callAPI({
+      input_location_mode: inputLocationMode,
+      input_income: inputIncome,
+      input_location: inputLocation,
+      input_size: inputSize
+    }).then((returnVal) => {
+      setGrandTotal(Math.round(returnVal.result_grand_total));
     });
   }
 

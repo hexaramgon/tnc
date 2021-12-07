@@ -13,16 +13,17 @@ This is the TNC Version of the Cool Climate Carbon Calculator. Created during th
                   |
               CalcPages  ------- Contain (Custom Assets)
                      
+## Get Started
 
-To start working on the app. Simply run:
+To start working on the app:
 
-`git clone git@github.com:hexaramgon/tnc.git` for ssh
-
-`https://github.com/hexaramgon/tnc.git` otherwise
-
-`npm install`
-
-`npm start`
+1. Clone this repository
+2. Clone the repository `calculator-api` from [CoolClimateNetwork/calculator-api](https://github.com/CoolClimateNetwork/calculator-api/)
+   1. If you find this repository not found, ask Chris to add you to the organization.
+   2. Make sure this `calculator-api` package is installed in the same folder as this `tnc` package. This means you would have a parent directory probably called `coolclimate`, and two directories `calculator-api` and `tnc` inside the `coolclimate` directory.
+3. `cd` into `coolclimate-api` directory and run `npm install` => `npm run build`
+4. `cd` into `tnc` directory and run `npm install`
+5. Now you can run `npm run start` to start serving the frontend
 
 ## Relavent Links
 
