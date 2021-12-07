@@ -92,7 +92,9 @@ const Started = ({nextPage, funcs}) => {
             onChange={i => changeIncome(i)}
           ></Dropdown>
           <br></br>
-          <button className="default-button" onClick={() => tester()}>NEXT</button>
+          <div className="col-wrapper" style={{alignItems: "center"}}>
+            <button className="default-button" onClick={() => tester()}>NEXT</button>
+          </div>
         </div>
       );
   }
