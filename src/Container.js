@@ -1,11 +1,10 @@
-
 import CarbCacl from './components/CarbonCalculator';
 import {useState} from 'react';
 import './Container.scss';
 import CCgraph from './components/Ccgraph';
 import Intro from './components/Intro';
 import ResultChart from './components/ResultsChart';
-import exit from './components/svgs/close-x-10324.svg'
+import exit from './svgs/close-x-10324.svg'
 import axios from "axios";
 import * as APILib from '@coolclimate/calculator-api';
 
@@ -111,7 +110,7 @@ function Container() {
             <img alt="" src={exit} className="exit-icon"/>
           </div>
           <h1>YOUR CARBON FOOTPRINT</h1>
-          <div className="row-wrapper">
+          <div className="info-bar row-wrapper">
             <div className="row-wrapper info-gaze">
               <div className="info-box light-blue">
               </div>
@@ -123,7 +122,7 @@ function Container() {
               <h2>SIMILAR HOUSEHOLDS</h2>
             </div>
           </div>
-          <p>Click/tap on bars to see more details. View documentation for detailed methodology.</p>
+          <p style={{textAlign:"center"}}>Click/tap on bars to see more details. View documentation for detailed methodology.</p>
           <ResultChart></ResultChart>
         </div>
       </div>

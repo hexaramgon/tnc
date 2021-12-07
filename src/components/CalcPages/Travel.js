@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dropdown from '../CustomAssets/Dropdown';
-import trashicon from '../svgs/trash-347.svg'
+import trashicon from '../../svgs/trash-347.svg'
 
 
 const Travel = () => {

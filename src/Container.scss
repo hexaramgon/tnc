@@ -7,6 +7,9 @@
 $green-color: rgb(0,112,60);
 $light-green-color: rgba(0, 112, 60, 0.836);
 $serif-font: Georgia, 'Times New Roman', Times, serif;
+$tablet-bp: 968px;
+$mobile-bp: 648px;
+
 
 *{
   box-sizing: border-box;
@@ -39,6 +42,9 @@ $serif-font: Georgia, 'Times New Roman', Times, serif;
 .col-wrapper{
     display: flex;
     flex-direction: column;
+    // align-items: center;
+    margin: 1rem;
+
 }
 
 .default-button{
@@ -181,7 +187,7 @@ $serif-font: Georgia, 'Times New Roman', Times, serif;
 
 .carb-calc{
   width: 34%;
-  min-width: 380px;
+  min-width: 400px;
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.25);
   right: 60px;
   margin-left: 9rem;
@@ -205,12 +211,14 @@ $serif-font: Georgia, 'Times New Roman', Times, serif;
   }
 }
 
+
 #updated-carb-calc{
   width: 63%;
   transition: 0.4s;
   transition-delay: 0.2s;
-  margin-left: 6rem;
+  margin-left: 6.5%;
 }
+
 
 .rightgraph-transition{
   transition: 0.5s;
@@ -224,14 +232,18 @@ $serif-font: Georgia, 'Times New Roman', Times, serif;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-.cc-navbar{
+.cc-navbar-wrapper{
+  width: 100%;
+  background-color: rgb(248,248,248);
   height: 52px;
+  overflow-y: scroll;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.cc-navbar{
   width: 100%;
   background-color: rgb(248,248,248);
   justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   .sub-icon{
     width: 12%;
     display: flex;
@@ -239,6 +251,8 @@ $serif-font: Georgia, 'Times New Roman', Times, serif;
     align-items: center;
     cursor: pointer;
     transition: 0.1s;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     h4{
       font-size: 12px;
       font-weight: 800;
@@ -318,7 +332,7 @@ justify-content: space-around;
 
 .ccGraph{
   position: fixed;
-  right: 8rem;
+  right: 8%;
   top:3rem;
   width: 14%;
   h3{
@@ -408,7 +422,7 @@ justify-content: space-around;
     height: 250px;
   }
   .results-page-graph{
-    width: 70px;
+    width: 5vw;
     margin: 0.2rem;
     transition: 0.3s;
     cursor: pointer;
@@ -453,6 +467,9 @@ justify-content: space-around;
   h2{
     font-size: 22px;
     font-weight: 700;
+  }
+  p{
+    font-size: 12px;
   }
 }
 
@@ -502,6 +519,20 @@ justify-content: space-around;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 4rem;
+  .col-wrapper{
+    margin-left: 1rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  h4{
+    margin-bottom: 0px;
+    margin-left: 1rem;
+    margin-top: 4rem;
+  }
+  p{
+    font-size: 12px;
+  }
 }
 
 
@@ -835,6 +866,84 @@ background-color: rgb(196, 196, 196);
 #animation-2{
   transition: 0.25s;
   opacity: 1;
+}
+
+
+@media (max-width:$tablet-bp){
+  .container{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 100vw;
+    align-items: center;
+    padding-top: 3rem;
+  }
+  .ccGraph{
+    position: relative;
+    right: 0px;
+    left: 0px;
+    width: 83%;
+    margin-left: 2.5rem;
+  }
+  .carb-calc{
+    margin: 0rem;
+    width: 95%;
+    min-width: 0;
+
+  }
+  #updated-carb-calc{
+    width: 90%;
+    margin: 0rem;
+  }
+  .cc-navbar{
+    width: 700px;
+    .sub-icon{
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  .vehicle-sub-text{
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width:$mobile-bp){
+  .carb-calc{
+    width: 80%;
+    margin: 0rem;
+  }
+  .vehicle-box{
+    margin: 0rem;
+    padding: 1rem;
+  }
+  .cc-navbar{
+    width: 500px;
+  }
+  .info-bar{
+    flex-direction: column;
+  }
+  .carb-calc-wrapper{
+    padding: 1rem 1rem 0rem 1rem;
+  }
+  .vehicle-sub-text{
+    margin-left: 0rem;
+  }
+  .outer-question{
+    .row-wrapper{
+      flex-direction: column;
+    }
+    .half-width{
+      width: 90%;
+    }
+    .left-home-input{
+      width: 98%;
+    }
+    .right-home-input{
+      align-items: center;
+      width: 98%;
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 

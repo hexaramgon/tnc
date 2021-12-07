@@ -20,7 +20,7 @@ const CCGraph = ({toggleGraph, grandTotal}) => {
 
 
   return (
-      <div className="rightgraph-transition ccGraph">
+      <div className="ccGraph">
         <h3>To start, we use your household location, size and income to estimate your average carbon footprint.</h3>
         <div className="row-wrapper graph-row">
           <SmallGraph type = {1} size = {grandTotal}></SmallGraph>
