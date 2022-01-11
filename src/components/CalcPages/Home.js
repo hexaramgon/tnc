@@ -1,6 +1,10 @@
 import Switch from '../CustomAssets/Switch'
 import React, { useState, useEffect } from 'react';
 import Dropdown from '../CustomAssets/Dropdown';
+import ReactTooltip from 'react-tooltip';
+import questionicon from '../../svgs/question.svg'
+
+
 
 const Home = () => {
 
@@ -42,7 +46,11 @@ function HomeSimple({unit, setUnit, water, setWater}) {
   return (
   <div >
     <div className="outer-question">
+      <div className="row-wrapper">
       <h2>How much do you spend on electricity?</h2>
+      <img style={{marginLeft:"1rem"}} src={questionicon} data-tip="To calculate your total electricity usage or costs, review your monthly electricity bills. Each bill will tell you how many kilowatt hours you have used in the month at what cost." />
+      <ReactTooltip clickable={true} effect="solid" type="info" offset={{top:"-30px"}}/>
+      </div>
       <div className="row-wrapper">
         <div className="left-home-input">
           <p>Amount</p>
