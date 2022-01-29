@@ -80,6 +80,14 @@ Holds all the different pages that the CarbonCalculator renders.
 
 This holds all the custom UI components such as dropdown menu and slider bars that deviate from their orginal representation
 
+## MISC
+
+### Outside NPM packages
+
+The only outside dependecies within the project are the tooltip package: https://www.npmjs.com/package/react-tooltip
+
+This is used to render the tooltips within the title
+
 ## TO-DO
 
 ### Bug Fixes:

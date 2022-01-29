@@ -48,7 +48,7 @@ const Slider = ({unit, avg, title}) => {
             type="range" 
             min="0" 
             max="3" 
-            id="myRange"
+            // id="myRange"
             value={value} 
             className="ccslider"
             onChange={(e)=>handleChange(e)}>

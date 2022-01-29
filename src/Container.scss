@@ -30,6 +30,18 @@ $mobile-bp: 648px;
   height: 0px;
 }
 
+#full-width{
+  width: 80%;
+  transition-delay: 0.5s;
+  transition: 0.5s;
+  margin-left: 9.5vw;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
 .full-width{
   width: 100%;
 }
@@ -39,12 +51,22 @@ $mobile-bp: 648px;
     flex-direction: row;
 }
 
+.mobile{
+  display: none;
+}
+
 .col-wrapper{
     display: flex;
     flex-direction: column;
     // align-items: center;
-    margin: 1rem;
+    // margin: 1rem;
+}
 
+.mobile-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+  display: none;
 }
 
 .default-button{
@@ -88,7 +110,7 @@ $mobile-bp: 648px;
 }
 
 #none{
-    display: none;
+  display: none;
 }
 
 .none{
@@ -128,6 +150,24 @@ $mobile-bp: 648px;
   justify-content: space-between;
 }
 
+.tooltip-icon{
+  margin-left: 1rem;
+  height: 16px;
+  width: auto;
+  margin-bottom: 11px;
+}
+
+.tooltip-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:  2rem;
+  h3{
+    margin-top: 0px !important;
+  }
+
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -160,28 +200,6 @@ $mobile-bp: 648px;
     flex-direction: column;
     align-items: center;
     position: relative;
-    h1{
-      font-size: 15px;
-      font-weight: 800;
-      margin-top: 2rem;
-    }
-    h2{
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .info-box{
-      width: 20px;
-      height: 20px;
-      margin-right: 0.5rem;
-    }
-    p{
-      font-size: 13px;
-    }
-    .info-gaze{
-      display: flex;
-      align-items: center;
-      width: 200px;
-    }
   }
 }
 
@@ -199,9 +217,9 @@ $mobile-bp: 648px;
   flex-direction: column;
   margin-right: 5rem;
   h3{
+    margin-top: 2rem;
     font-size: 14px;
     font-weight: normal;
-    margin-top:  2rem;
   }
   p{
     font-weight: 300;
@@ -297,7 +315,9 @@ justify-content: space-around;
   width: 41%;
   transition: 0.25s;
   position: relative;
-  margin-left: 6.5rem;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+
   h1{
     font-style: normal;
     font-weight: normal;
@@ -333,7 +353,7 @@ justify-content: space-around;
 .ccGraph{
   position: fixed;
   right: 8%;
-  top:3rem;
+  top:10vh;
   width: 14%;
   h3{
     font-weight: 300;
@@ -392,6 +412,7 @@ justify-content: space-around;
   height: 65px;
   background-color: rgb(0,158,203);
   border-radius: 5px;
+  transition: 0.5s;
 }
 
 .light-blue{
@@ -411,6 +432,70 @@ justify-content: space-around;
 // ResultsChart SCSS classess                                                                                 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+.results-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-box{
+  width: 290px;
+  height: 250px;
+  border: rgb(221, 221, 221) solid 1px;
+  margin: 1rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.results-legend{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+    h1{
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: 2rem;
+  }
+    h2{
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .info-box{
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+    .info-gaze{
+      display: flex;
+      align-items: center;
+      width: 200px;
+    }
+    p{
+      font-size: 13px;
+    }
+}
+
+.outerresult-box{
+  border: rgb(221, 221, 221) solid 1px;
+  padding: 2rem;
+  margin-bottom: 10rem;
+}
+
+.resultserif-font{
+  font-family: $serif-font;
+  font-size: 48px;
+  margin: 0px;
+  font-weight: 500;
+}
+
+.resultbottom-font{
+  margin: 0px;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #5c5c5c;
+}
 
 
 .graph-section{
@@ -878,12 +963,38 @@ background-color: rgb(196, 196, 196);
     align-items: center;
     padding-top: 3rem;
   }
+  .small-graph-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: self-start;
+  }
+  .small-graph{
+    height: 30px;
+    border-radius: 0px;
+  }
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+  .mobile-wrapper{
+    display: flex ;
+  }
+  .info-prelude{
+    display: none;
+  }
   .ccGraph{
     position: relative;
-    right: 0px;
-    left: 0px;
-    width: 83%;
-    margin-left: 2.5rem;
+    width: 75vw;
+    border: rgb(168, 168, 168) solid 1px;
+    padding: 2rem;
+    top: auto;
+    right: auto;
+    p{
+      margin-top: 10px;
+      text-align: left;
+    }
   }
   .carb-calc{
     margin: 0rem;
@@ -905,6 +1016,7 @@ background-color: rgb(196, 196, 196);
   .vehicle-sub-text{
     margin-bottom: 1rem;
   }
+  
 }
 
 @media (max-width:$mobile-bp){

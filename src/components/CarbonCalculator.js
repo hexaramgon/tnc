@@ -10,7 +10,7 @@ import CCgraph from '../components/Ccgraph';
 
 //Carbon Calculator Wrappper to render different pages and handle page changes
 //Also in charge of updating API Call whenever next button is clicked or navbar is clicked
-const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs}) => {
+const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs, toggleGraph, grandTotal, baselineTotal,  allBaselineTotals,  allTotals }) => {
 
 
   //////////////////////////////////////////
@@ -38,9 +38,15 @@ const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs}) => {
 
 
     //Pages to render based on index 
-    const pages = [<Started nextPage = {nextPage} funcs = {funcs}></Started>, <Travel></Travel>, <Home></Home>, <Food></Food>, <Shopping></Shopping>, <Results></Results>]
+    const pages = [
+    <Started nextPage = {nextPage} funcs = {funcs}></Started>, 
+    <Travel></Travel>, 
+    <Home></Home>, 
+    <Food></Food>, 
+    <Shopping></Shopping>, 
+    <Results baselineTotal={baselineTotal} grandTotal={grandTotal} allBaselineTotals={allBaselineTotals} allTotals={allTotals}></Results>]
     
-
+      // Could condense baselinte total to just array access
 
   //////////////////////////////////////////
   //        HTML RENDER                   //
@@ -77,11 +83,11 @@ const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs}) => {
       <div className="carb-calc-wrapper">
         {pages[page]}
       </div>
-      <div style={{position:"relative"}}>
-        {/* <CCgraph></CCgraph> */}
+      <div className={page!= 0 && page != 5 ? 'mobile-wrapper' : 'none'}>
+         <CCgraph toggleGraph={toggleGraph} baselineTotal = {baselineTotal} grandTotal={grandTotal}></CCgraph> 
       </div>
-      <hr id = {page ? "" : "none" }></hr>
-      <div className="row-wrapper button-row" id = {page ? "" : "none" }>
+      <hr id = {page != 0 && page != 5 ? "" : "none" }></hr>
+      <div className="row-wrapper button-row" id = {page != 0 && page != 5 ? "" : "none" }>
         <button className="alternate-button" onClick={()=>prevPage()}>BACK</button>
         <button className="default-button" onClick={()=>nextPage()}>NEXT</button>
       </div>

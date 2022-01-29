@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from 'react';
+
+
 const Intro = ({page}) => {
 
 
@@ -8,20 +11,27 @@ const Intro = ({page}) => {
   //----page----
   //Current page calc is displaying. 
   //If 0 (Start) Should be displaying introtext, anything else don't.
-  
-  
-  //CSS ANIMATION (kinda broken rn )
 
-    function test() {
-        if (page !== 0){
-            var delayInMilliseconds = 250; //1 second
-            setTimeout(function() {
-                return "none"
-            }, delayInMilliseconds);
-        } else{
-            return"info-prelude"
-        }
+  const [show, setShow] = useState("");
+
+  //Functions to handle Fade Out of INTRO Text.
+  //When Page is not displaying 0, then delay the fadeout effect
+  
+
+  function compRemoval() {
+    setTimeout(() => {
+       setShow("none")
+    }, 300);
+  }
+
+  useEffect(() => {
+    if (page != 0){
+        compRemoval();
     }
+    if (page == 0){
+      setShow("block")
+    }
+  });
 
 
   //////////////////////////////////////////
@@ -29,7 +39,7 @@ const Intro = ({page}) => {
   //////////////////////////////////////////
 
     return (
-        <div className={test()} id={page ? "no-width" : ""}>
+        <div className="info-prelude" id={show}>
             <div id={page ? "blank-display" : ""}>
                 <h1>Carbon Footprint Calculator</h1>
                 <h2>What is a carbon footprint?</h2>

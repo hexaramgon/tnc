@@ -48,8 +48,8 @@ function HomeSimple({unit, setUnit, water, setWater}) {
     <div className="outer-question">
       <div className="row-wrapper">
       <h2>How much do you spend on electricity?</h2>
-      <img style={{marginLeft:"1rem"}} src={questionicon} data-tip="To calculate your total electricity usage or costs, review your monthly electricity bills. Each bill will tell you how many kilowatt hours you have used in the month at what cost." />
-      <ReactTooltip clickable={true} effect="solid" type="info" offset={{top:"-30px"}}/>
+      <img className='tooltip-icon' src={questionicon} data-tip="To calculate your total electricity usage or costs, review your monthly electricity bills. Each bill will tell you how many kilowatt hours you have used in the month at what cost." />
+      <ReactTooltip clickable={true} effect="solid" type="info" />
       </div>
       <div className="row-wrapper">
         <div className="left-home-input">

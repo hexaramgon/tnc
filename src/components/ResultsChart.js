@@ -1,36 +1,54 @@
 //EXTRA RESULTS WITH OVERLAY
-const ResultChart = () => {
+const ResultChart = ({allBaselineTotals, allTotals}) => {
+
+
+
 
     return (
-      <div className="row-wrapper">
-        <div className="scale">
+      <div className="results-wrapper">
+        <div className="results-legend">
+          <h1>YOUR CARBON FOOTPRINT</h1>
+          <div className="info-bar row-wrapper">
+            <div className="row-wrapper info-gaze">
+              <div className="info-box light-blue">
+              </div>
+              <h2>YOUR HOUSEHOLDS</h2>
+            </div>
+            <div className="row-wrapper info-gaze">
+              <div className="info-box light-grey">
+              </div>
+              <h2>SIMILAR HOUSEHOLDS</h2>
+            </div>
+          </div>
+          <p style={{textAlign:"center"}}>Click/tap on bars to see more details. View documentation for detailed methodology.</p>
         </div>
-        <Digraph title={"TRAVEL"} clientperc={10.43} otherperc={6.18} temp={15}></Digraph>
-        <Digraph title={"FOOD"} clientperc={6.13}  otherperc={8.40} temp={9}></Digraph>
-        <Digraph title={"HOME"} clientperc={12.06}  otherperc={10.08} temp={6}></Digraph>
-        <Digraph title={"SHOPPING"} clientperc={8.91}  otherperc={6.91} temp={5}></Digraph>
+        <div className="row-wrapper">
+          <div className="scale">
+          </div>
+          <Digraph title={"TRAVEL"} clientperc={allTotals[0]} otherperc={allBaselineTotals[0]}></Digraph>
+          <Digraph title={"FOOD"} clientperc={allTotals[1]}  otherperc={allBaselineTotals[1]}></Digraph>
+          <Digraph title={"HOME"} clientperc={allTotals[2]}  otherperc={allBaselineTotals[2]}></Digraph>
+          <Digraph title={"SHOPPING"} clientperc={allTotals[3]}  otherperc={allBaselineTotals[3]}></Digraph>
+        </div>
       </div>
     );
 }
 
 
-function closestrange(int) {
-    const floordiv = Math.floor(int / 10)
-    const rem = int % 10
-    if (rem > 3) {
-        return (floordiv + 1) * 10
-    } else {
-        return floordiv * 10
-    }
-}
-
 
 export default ResultChart;
 
 
-function Digraph({title, clientperc, otherperc, temp}) {
+function Digraph({title, clientperc, otherperc}) {
     const clheight = String(clientperc * 20) + "px"
     const otheight = String(otherperc * 20) + "px"
+
+
+  function findpercent(final, starting){
+    window.scroll(0,0)
+    return Math.abs(Math.round(((final - starting) / Math.abs(starting)) * 100))
+  }
+
 
 
     return(
@@ -42,10 +60,8 @@ function Digraph({title, clientperc, otherperc, temp}) {
             </div>
         </div>
         <h3>{title}</h3>
-        <h4>{temp}%</h4>
+        <h4>{findpercent(clientperc, otherperc)}%</h4>
         <p>{clientperc > otherperc ? "worse" : "better"} than average</p>
-
-
     </div>
 
     )

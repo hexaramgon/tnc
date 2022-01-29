@@ -92,13 +92,13 @@ function Plane () {
       <div className="vehicle-box">
         <h2>Flights</h2>
           <h3>Short one-way-flights &lt; 400 mi per year</h3>        
-          <input className="text-input" type="text" id="fname" name="fname"/>
+          <input className="text-input" type="text" id="shortfl" name="shortfl"/>
           <h3>Medium one-way flights 400-1500 mi per year</h3>        
-          <input className="text-input" type="text" id="fname" name="fname"/>
+          <input className="text-input" type="text" id="medfl" name="medfl"/>
           <h3>Long one-way flights 1500 - 3000 mi per year</h3>        
-          <input className="text-input" type="text" id="fname" name="fname"/>
+          <input className="text-input" type="text" id="longfl" name="longfl"/>
           <h3>Extended one-way flights &gt; 3000 mi per year</h3>        
-          <input className="text-input" type="text" id="fname" name="fname"/>
+          <input className="text-input" type="text" id="extfl" name="extfl"/>
       </div>
   )
 }
