@@ -1,0 +1,26 @@
+{
+  "name": "@coolclimate/calculator-api",
+  "version": "0.0.1",
+  "description": "API Library for CoolClimate Calculator",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "main": "dist/index.js",
+  "author": "Yunhao Cao",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.2.0",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.7.5",
+    "axios": "^0.24.0"
+  }
+}
