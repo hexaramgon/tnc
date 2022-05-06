@@ -10,8 +10,6 @@ const Home = () => {
 
 
   const [animation, setAnimation] = useState("animation");
-  const [unit, setUnit] = useState(undefined);
-  const [water, setWater] = useState(undefined);
   const [homeToggle, setHomeToggle] = useState(true)
 
 
@@ -28,6 +26,7 @@ const Home = () => {
     
     return (
       <div id={animation}>
+        <ReactTooltip type="dark" place='right'/>
         <div style={{display:'flex', justifyContent:'center', width:'100%', height:'120px'}}>
          <Switch toggler={setHomeToggle} toggle={homeToggle}></Switch>  
          </div>
@@ -43,13 +42,19 @@ export default Home;
 
 function HomeSimple({unit, setUnit, water, setWater}) {
 
+  const [unit1, setUnit1] = useState("")
+  const [water1, setWater1] = useState("")
+
+
+
   return (
   <div >
     <div className="outer-question">
       <div className="row-wrapper">
-      <h2>How much do you spend on electricity?</h2>
-      <img className='tooltip-icon' src={questionicon} data-tip="To calculate your total electricity usage or costs, review your monthly electricity bills. Each bill will tell you how many kilowatt hours you have used in the month at what cost." />
-      <ReactTooltip clickable={true} effect="solid" type="info" />
+      <div className='tooltip-row'>
+        <h2>How much do you spend on electricity?</h2>
+        <img alt = "" className='tooltip-icon' src={questionicon} data-tip="To calculate your total electricity usage or costs, review your monthly electricity bills. Each bill will tell you how many kilowatt hours you have used in the month at what cost."></img>
+      </div>
       </div>
       <div className="row-wrapper">
         <div className="left-home-input">
@@ -61,8 +66,8 @@ function HomeSimple({unit, setUnit, water, setWater}) {
           <Dropdown
             placeholder={"$/YEAR"} 
             options={["$/YEAR", "$/MONTH", "$/WEEK", "$/DAY"]}
-            value={unit}
-            onChange={u => setUnit(u)}>
+            value={unit1}
+            onChange={u => setUnit1(u)}>
           </Dropdown>
         </div>
       </div>
@@ -70,22 +75,33 @@ function HomeSimple({unit, setUnit, water, setWater}) {
     <hr style={{width:"100%", marginBottom:"2rem"}}></hr>
 
     <div className="outer-question">
-      <h2>What is your household water consumption?</h2>
-      <div className="row-wrapper">
+    <div className='tooltip-row'>
+        <h2> What is your household water consumption? </h2>
+        <img alt = "" className='tooltip-icon' src={questionicon} data-tip="Average household water consumption: 242 liters/ day
+          1-person household: 148 liters/day
+          2-person household: 242 liters/day
+          3-person household: 261 liters/day
+          4-person household: 299 literes/day
+          5-person household: 337 liters/day"></img>
+      </div>
+        <div className="row-wrapper">
         <div className="left-home-input">
         <p>Liter Per Day</p>
           <Dropdown
             placeholder={"148 L (AVERAGE FOR 1 PERSON HOUSEHOLD)"} 
             options={["$/YEAR", "$/MONTH", "$/WEEK", "$/DAY"]}
-            value={water}
-            onChange={w => setWater(w)}>
+            value={water1}
+            onChange={w => setWater1(w)}>
           </Dropdown>
         </div>
       </div>
     </div>
     <hr style={{width:"100%", marginBottom:"2rem"}}></hr>
     <div className="outer-question">
-      <h2>How large is your living space?</h2>
+      <div className='tooltip-row'>
+        <h2>How large is your living space?</h2>
+        <img alt = "" className='tooltip-icon' src={questionicon} data-tip="For a house, measure the length of a house and multiply it by the width of the house. If you have two stories, multiply by two. For an apartment or condo, first determine the area of each room by multiplying the length and width of each room. Add up the total area measurements for each room. This will give you the total area of your living space, all rooms combined."></img>
+      </div>      
       <div className="row-wrapper">
         <div className="left-home-input">
         <p>Total Square Footage</p>
@@ -99,11 +115,24 @@ function HomeSimple({unit, setUnit, water, setWater}) {
 
 
 function HomeAdvanced() {
+
+
+  const [unit2, setUnit2] = useState("")
+  const [unit3, setUnit3] = useState("")
+  const [unit4, setUnit4] = useState("")
+
+
+  const [water2, setWater2] = useState("")
+
   return (
   <div>
     <div className="outer-question">
-      <h2>How much do you spend on electricity?</h2>
-      <div className="row-wrapper">
+    <ReactTooltip type="dark" place='right'/>
+
+      <div className='tooltip-row'>
+        <h2>How much do you spend on electricity?</h2>
+        <img alt = ""  className='tooltip-icon' src={questionicon} data-tip="To calculate your total electricity usage or costs, review your monthly electricity bills. Each bill will tell you how many kilowatt hours you have used in the month at what cost."></img>
+      </div>      <div className="row-wrapper">
         <div className="left-home-input">
           <p>Amount</p>
           <input className="text-input" placeholder = "1070" type="text" id="fname" name="fname"/>
@@ -113,8 +142,8 @@ function HomeAdvanced() {
           <Dropdown
             placeholder={"$/YEAR"} 
             options={["$/YEAR", "$/MONTH", "$/WEEK", "$/DAY"]}
-            // value={unit}
-            // onChange={w => setWater(w)}
+            value={unit2}
+            onChange={w => setUnit2(w)}
             >
           </Dropdown>
         </div>
@@ -133,7 +162,10 @@ function HomeAdvanced() {
     <hr style={{width:"100%", marginBottom:"2rem"}}></hr>
 
     <div className="outer-question">
-      <h2>How much do you spend on natural gas?</h2>
+      <div className='tooltip-row'>
+        <h2>How much do you spend on natural gas?</h2>
+        <img alt = "" className='tooltip-icon' src={questionicon} data-tip="To calculate your total annual natural gas usage or costs, review your monthly utility bills. Each bill will tell you how many cubic metres you have used in the month at what cost."></img>
+      </div>
       <div className="row-wrapper">
         <div className="left-home-input">
           <p>Amount</p>
@@ -144,8 +176,8 @@ function HomeAdvanced() {
           <Dropdown
             placeholder={"$/YEAR"} 
             options={["$/YEAR", "$/MONTH", "$/WEEK", "$/DAY"]}
-            // value={unit}
-            // onChange={u => setUnit(u)}
+            value={unit3}
+            onChange={w => setUnit3(w)}
             >
           </Dropdown>
         </div>
@@ -155,7 +187,10 @@ function HomeAdvanced() {
     <hr style={{width:"100%", marginBottom:"2rem"}}></hr>
 
 <div className="outer-question">
-  <h2>How much do you spend on heating oil and other fuels?</h2>
+  <div className='tooltip-row'>
+    <h2>How much do you spend on heating oil and other fuels?</h2>
+    <img alt = ""  className='tooltip-icon' src={questionicon} data-tip="To calculate your total annual usage or cost of heating oil or other fuels to heat your home, review your monthly bills for heating oil or other home heating fuels. Each bill will tell you how many litres of oil were delivered to you each month at what cost."></img>
+  </div>
   <div className="row-wrapper">
     <div className="left-home-input">
       <p>Amount</p>
@@ -166,8 +201,8 @@ function HomeAdvanced() {
       <Dropdown
         placeholder={"$/YEAR"} 
         options={["$/YEAR", "$/MONTH", "$/WEEK", "$/DAY"]}
-        // value={unit}
-        // onChange={u => setUnit(u)}
+        value={unit4}
+        onChange={w => setUnit4(w)}
         >
       </Dropdown>
     </div>
@@ -176,15 +211,23 @@ function HomeAdvanced() {
 
   <hr style={{width:"100%", marginBottom:"2rem"}}></hr>  
     <div className="outer-question">
-      <h2> What is your household water consumption? </h2>
+      <div className='tooltip-row'>
+        <h2> What is your household water consumption? </h2>
+        <img alt = "" className='tooltip-icon' src={questionicon} data-tip="Average household water consumption: 242 liters/ day
+          1-person household: 148 liters/day
+          2-person household: 242 liters/day
+          3-person household: 261 liters/day
+          4-person household: 299 literes/day
+          5-person household: 337 liters/day"></img>
+      </div>
       <div className="row-wrapper">
         <div className="left-home-input">
           <p>Liters Per Day</p>
           <Dropdown
             placeholder={"242(AVERAGE FOR 1 PERSON HOUSEHOLD)"} 
             options={["$/YEAR", "$/MONTH", "$/WEEK", "$/DAY"]}
-            // value={unit}
-            // onChange={u => setUnit(u)}
+            value={water2}
+            onChange={w => setWater2(w)}
             >
           </Dropdown>        
           </div>
@@ -194,7 +237,10 @@ function HomeAdvanced() {
 
     <hr style={{width:"100%", marginBottom:"2rem"}}></hr>
     <div className="outer-question">
-      <h2>How large is your living space?</h2>
+      <div className='tooltip-row'>
+        <h2>How large is your living space?</h2>
+        <img alt = "" className='tooltip-icon' src={questionicon} data-tip="For a house, measure the length of a house and multiply it by the width of the house. If you have two stories, multiply by two. For an apartment or condo, first determine the area of each room by multiplying the length and width of each room. Add up the total area measurements for each room. This will give you the total area of your living space, all rooms combined."></img>
+      </div>
       <div className="row-wrapper">
         <div className="left-home-input">
         <p>Total Square Footage</p>

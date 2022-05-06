@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const Slider = ({unit, avg, title}) => {
+const Slider = ({unit, avg, title, setval, val}) => {
 
 
   //////////////////////////////////////////
@@ -29,6 +29,7 @@ const Slider = ({unit, avg, title}) => {
 
     function handleChange(event) {
         setValue(event.target.value)
+        setval(Math.round(((avg * event.target.value) + Number.EPSILON) * 100) / 100);
     }
 
 
@@ -39,10 +40,10 @@ const Slider = ({unit, avg, title}) => {
     //////////////////////////////////////////
     
     return (
-    <div class="slidecontainer">
+    <div className="slidecontainer">
         <section style={{textAlign:"left", width:"100%", margin:"1.5rem"}}>
             <h4>{title}</h4>
-            <p>{Math.round(((avg * value) + Number.EPSILON) * 100) / 100} {unit}</p>
+            <p>{val} {unit}</p>
         </section>
         <input 
             type="range" 

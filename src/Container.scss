@@ -10,11 +10,24 @@ $serif-font: Georgia, 'Times New Roman', Times, serif;
 $tablet-bp: 968px;
 $mobile-bp: 648px;
 
-
 *{
   box-sizing: border-box;
   font-family: "Inv Maison Neue","Maison Neue",-apple-system,BlinkMacSystemFont,"Open Sans",open-sans,sans-serif;
 }
+
+.pac-container:after {
+  /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+  background-image: none !important;
+  height: 0px;
+}
+
+
+
+html{
+  background-color: #fefefe;
+}
+
 
 
 
@@ -60,6 +73,11 @@ $mobile-bp: 648px;
     flex-direction: column;
     // align-items: center;
     // margin: 1rem;
+}
+
+.row-to-col{
+  display: flex;
+  flex-direction: row;
 }
 
 .mobile-wrapper{
@@ -152,9 +170,11 @@ $mobile-bp: 648px;
 
 .tooltip-icon{
   margin-left: 1rem;
-  height: 16px;
+  height: 20px;
   width: auto;
-  margin-bottom: 11px;
+  top: 40%;
+  position: absolute;
+  right: 0px;
 }
 
 .tooltip-row{
@@ -162,6 +182,8 @@ $mobile-bp: 648px;
   flex-direction: row;
   align-items: center;
   margin-top:  2rem;
+  position: relative;
+  width: 100%;
   h3{
     margin-top: 0px !important;
   }
@@ -200,6 +222,7 @@ $mobile-bp: 648px;
     flex-direction: column;
     align-items: center;
     position: relative;
+    overflow-y: scroll;
   }
 }
 
@@ -525,6 +548,22 @@ justify-content: space-around;
     font-weight: normal;
     margin: 0px;
   }
+}
+
+.scale{
+  padding-left: 10px;
+    border-right: #c7c7c7 solid;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p{
+    margin: 0px;
+    font-size: 12px;
+    margin-right: 4px;
+    font-weight: 600;
+    color: #4d4d4c;
+    }
 }
 
 
@@ -907,7 +946,7 @@ input:checked + .inner-switch:before {
 .exit-icon-container{
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 10%;
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -963,6 +1002,12 @@ background-color: rgb(196, 196, 196);
     align-items: center;
     padding-top: 3rem;
   }
+  .more-info-graph{
+    width: 90vw !important;
+  }
+  .row-to-col{
+    flex-direction: column;
+  }
   .small-graph-wrapper{
     width: 100%;
     display: flex;
@@ -977,6 +1022,7 @@ background-color: rgb(196, 196, 196);
   }
   .mobile{
     display: block;
+    width: 100%;
   }
   .mobile-wrapper{
     display: flex ;
@@ -1003,7 +1049,7 @@ background-color: rgb(196, 196, 196);
 
   }
   #updated-carb-calc{
-    width: 90%;
+    width: 95%;
     margin: 0rem;
   }
   .cc-navbar{
@@ -1016,12 +1062,21 @@ background-color: rgb(196, 196, 196);
   .vehicle-sub-text{
     margin-bottom: 1rem;
   }
+  #full-width{
+    margin-left: 0px;
+    width: 95%;
+  }
+  .exit-icon-container{
+    position: fixed;
+    top: 40px;
+    right: 50px;
+  }
   
 }
 
 @media (max-width:$mobile-bp){
   .carb-calc{
-    width: 80%;
+    width: 95%;
     margin: 0rem;
   }
   .vehicle-box{
@@ -1054,6 +1109,16 @@ background-color: rgb(196, 196, 196);
       align-items: center;
       width: 98%;
       margin-bottom: 2rem;
+    }
+  }
+  .results-legend{
+    margin-bottom: 0px;
+  }
+  .graph-section{
+    text-align: left;
+    h3{
+      font-size: 16px;
+      margin-bottom: -12px;
     }
   }
 }

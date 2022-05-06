@@ -32,6 +32,14 @@ export default Shopping;
 
 function HomeSimple() {
 
+
+  const [unit1, setUnit1] = useState(2600)
+  const [unit2, setUnit2] = useState(660)
+  const [unit3, setUnit3] = useState(214)
+
+
+
+
   return (
     <div >
       <h2>In a given month, about how much do you spend on the following?</h2>
@@ -40,18 +48,24 @@ function HomeSimple() {
           unit={"/month"}
           avg={2600}
           title={"PERSONAL (CLOTHING,MEDICAL)"}
+          setval={setUnit1}
+          val = {unit1}
         ></Slider>
         <hr></hr>
         <Slider
           unit={"/month"}
           avg={660}
           title={"HOME (FURNITURE,TECHNOLOGY)"}
+          setval={setUnit2}
+          val = {unit2}
         ></Slider>
         <hr></hr>
         <Slider
           unit={"/month"}
           avg={214}
-          title={"CAR"}>
+          title={"CAR"}
+          setval={setUnit3}
+          val = {unit3}>
           </Slider>
       </div>
     </div>

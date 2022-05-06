@@ -25,13 +25,13 @@ const Intro = ({page}) => {
   }
 
   useEffect(() => {
-    if (page != 0){
+    if (page !== 0){
         compRemoval();
     }
-    if (page == 0){
+    if (page === 0){
       setShow("block")
     }
-  });
+  }, [show, page]);
 
 
   //////////////////////////////////////////

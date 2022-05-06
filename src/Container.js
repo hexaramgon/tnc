@@ -28,54 +28,128 @@ function Container() {
   //const [apioption, functiontochangeapioption] = useState(defaultvalue)
 
   //Starting Page 
-  const [inputLocationMode, setInputLocationMode] = useState(1);
-  const [inputLocation, setInputLocation] = useState("94703");
-  const [inputIncome, setInputIncome] = useState(1);
-  const [inputSize, setInputSize] = useState(1);
-  const startedPageFuncs = [setInputLocation, setInputIncome, setInputSize];
 
-  //Transportation
-  const [inputNumVehicles, setNumVehicles]= useState(0);
-  const [inputFuel1, setinputFuel1] = useState(0);
-  const [inputFuel2, setinputFuel2] = useState(0);
-  const [inputFuel3, setinputFuel3] = useState(0);
-  const [inputFuel4, setinputFuel4] = useState(0);
-  const [inputFuel5, setinputFuel5] = useState(0);
-  const [inputFuel6, setinputFuel6] = useState(0);
-  const [inputFuel7, setinputFuel7] = useState(0);
-  const [inputFuel8, setinputFuel8] = useState(0);
-  const [inputFuel9, setinputFuel9] = useState(0);
-  const [inputFuel10, setinputFuel10] = useState(0);
-  const [inputMiles1, setinputMiles1] = useState(0);
-  const [inputMiles2, setinputMiles2] = useState(0);
-  const [inputMiles3, setinputMiles3] = useState(0);
-  const [inputMiles4, setinputMiles4] = useState(0);
-  const [inputMiles5, setinputMiles5] = useState(0);
-  const [inputMiles6, setinputMiles6] = useState(0);
-  const [inputMiles7, setinputMiles7] = useState(0);
-  const [inputMiles8, setinputMiles8] = useState(0);
-  const [inputMiles9, setinputMiles9] = useState(0);
-  const [inputMiles10, setinputMiles10] = useState(0);
-  const [inputMpg1, setinputMpg1] = useState(0);
-  const [inputMpg2, setinputMpg2] = useState(0);
-  const [inputMpg3, setinputMpg3] = useState(0);
-  const [inputMpg4, setinputMpg4] = useState(0);
-  const [inputMpg5, setinputMpg5] = useState(0);
-  const [inputMpg6, setinputMpg6] = useState(0);
-  const [inputMpg7, setinputMpg7] = useState(0);
-  const [inputMpg8, setinputMpg8] = useState(0);
-  const [inputMpg9, setinputMpg9] = useState(0);
-  const [inputMpg10, setinputMpg10] = useState(0);
-  const [inputAirExtended, setinputAirExtended] = useState(0);
-  const [inputAirLong, setinputAirLong] = useState(0);
-  const [inputAirMedium, setinputAirMedium] = useState(0);
-  const [inputAirShort, setinputAirShort] = useState(0);
+  let defin = 5;
+
+  let inputObject = {
+            //Starting params
+            input_location_mode: defin,
+            input_income: defin,
+            input_location: defin,
+            input_size: defin,
+            //Transportation params
+            input_footprint_transportation_num_vehicles: defin,
+            input_footprint_transportation_fuel1: defin,
+            input_footprint_transportation_fuel2: defin,
+            input_footprint_transportation_fuel3: defin,
+            input_footprint_transportation_fuel4: defin,
+            input_footprint_transportation_fuel5: defin,
+            input_footprint_transportation_fuel6: defin,
+            input_footprint_transportation_fuel7: defin,
+            input_footprint_transportation_fuel8: defin,
+            input_footprint_transportation_fuel9: defin,
+            input_footprint_transportation_fuel10: defin,
+            input_footprint_transportation_miles1: defin,
+            input_footprint_transportation_miles2: defin,
+            input_footprint_transportation_miles3: defin,
+            input_footprint_transportation_miles4: defin,
+            input_footprint_transportation_miles5: defin,
+            input_footprint_transportation_miles6: defin,
+            input_footprint_transportation_miles7: defin,
+            input_footprint_transportation_miles8: defin,
+            input_footprint_transportation_miles9: defin,
+            input_footprint_transportation_miles10: defin,
+            input_footprint_transportation_mpg1: defin,
+            input_footprint_transportation_mpg2: defin,
+            input_footprint_transportation_mpg3: defin,
+            input_footprint_transportation_mpg4: defin,
+            input_footprint_transportation_mpg5: defin,
+            input_footprint_transportation_mpg6: defin,
+            input_footprint_transportation_mpg7: defin,
+            input_footprint_transportation_mpg8: defin,
+            input_footprint_transportation_mpg9: defin,
+            input_footprint_transportation_mpg10: defin,
+            input_footprint_transportation_airtype: defin,
+            input_footprint_transportation_airtotal: defin,
+            input_footprint_transportation_groundtype: defin,
+            input_footprint_transportation_publictrans: defin,
+            input_footprint_transportation_bus: defin,
+            input_footprint_transportation_commuter: defin,
+            input_footprint_transportation_transit: defin,
+            input_footprint_transportation_intercity: defin,
+            input_footprint_transportation_airextended: defin,
+            input_footprint_transportation_airlong: defin,
+            input_footprint_transportation_airmedium: defin,
+            input_footprint_transportation_airshort: defin,
+            //Housing params
+            input_footprint_housing_electricity_type: defin,
+            input_footprint_housing_electricity_dollars: defin,
+            input_footprint_housing_cleanpercent: defin,
+            input_footprint_housing_naturalgas_type: 0,
+            input_footprint_housing_naturalgas_dollars: defin,
+            input_footprint_housing_heatingoil_type: defin,
+            input_footprint_housing_heatingoil_dollars: defin,
+            input_footprint_housing_heatingoil_dollars_per_gallon: defin,
+            input_footprint_housing_watersewage: defin,
+            input_footprint_housing_squarefeet: defin,
+            input_footprint_household_adults: defin,
+            input_footprint_household_children: defin,
+            input_footprint_housing_gco2_per_kwh: defin,
+            input_footprint_housing_hdd: defin,
+            input_footprint_housing_cdd: defin,
+            input_footprint_housing_heatingoil_gallons: defin,
+            input_footprint_housing_electricity_kwh: defin,
+            //Food params
+            input_footprint_shopping_food_meatfisheggs: defin,
+            input_footprint_shopping_food_dairy: defin,
+            input_footprint_shopping_food_otherfood: 0,
+            input_footprint_shopping_food_fruitvegetables: defin,
+            input_footprint_shopping_food_cereals: defin,
+            input_footprint_shopping_food_meattype: defin,
+            input_footprint_shopping_food_meat_beefpork: defin,
+            input_footprint_shopping_food_meat_poultry: defin,
+            input_footprint_shopping_food_meat_fish: defin,
+            input_footprint_shopping_food_meat_other: defin,
+            //Shopping params
+            input_footprint_shopping_goods_total: defin,
+            input_footprint_shopping_goods_default_furnitureappliances: defin,
+            input_footprint_shopping_goods_default_clothing: defin,
+            input_footprint_shopping_goods_default_other_entertainment: defin,
+            input_footprint_shopping_goods_default_other_entertainment: defin,
+            input_footprint_shopping_goods_default_other_office: defin,
+            input_footprint_shopping_goods_default_other_personalcare: defin,
+            input_footprint_shopping_goods_default_other_autoparts: defin,
+            input_footprint_shopping_goods_default_other_medical: defin,
+            input_footprint_shopping_goods_type: defin,
+            input_footprint_shopping_goods_other_type: defin,
+            input_footprint_shopping_goods_other_entertainment: defin,
+            input_footprint_shopping_goods_other_office: defin,
+            input_footprint_shopping_goods_other_personalcare: defin,
+            input_footprint_shopping_goods_other_autoparts: defin,
+            input_footprint_shopping_goods_other_medical: defin,
+            input_footprint_shopping_goods_clothing: defin,
+            input_footprint_shopping_goods_furnitureappliances: defin,
+            //Services params
+            input_footprint_shopping_services_type: defin,
+            input_footprint_shopping_services_total: defin,
+            input_footprint_shopping_services_healthcare: defin,
+            input_footprint_shopping_services_education: defin,
+            input_footprint_shopping_services_communications: defin,
+            input_footprint_shopping_services_vehicleservices: defin,
+            input_footprint_shopping_services_finance: defin,
+            input_footprint_shopping_services_household: defin,
+            input_footprint_shopping_services_charity: defin,
+            input_footprint_shopping_services_miscservices: defin,
+            //Misc params
+            input_changed: 0,
+            internal_state_abbreviation: 0
+
+  }
+
+  const [test, setTest] = useState(inputObject);
 
 
-
-  const funcs = [startedPageFuncs];
   
-
   //RESULTS FROM API
   //Used intermitenlly throughout codebase, state stays at parent but the hook to change it gets passed down through React Components.
 
@@ -119,9 +193,10 @@ function Container() {
 
   //Advances to next page
   function nextPage() {
-    APIgrab()
-    setPage(page + 1)
-    window.scroll(0,0)
+      // APIgrab()
+
+      setPage(page + 1)
+      window.scroll(0,0)
   }
 
   //Advances to last page
@@ -137,33 +212,48 @@ function Container() {
 
   function setallBaselines(returnVal){
     setbaselinetransportTotal(returnVal.result_transport_total)
+    setTransportTotal(returnVal.result_transport_total)
     // setbaselinetransportResults([returnVal.])
     setbaselineFoodTotal(returnVal.result_food_total)
+    setFoodTotal(returnVal.result_food_total)
     // setbaselinefoodResults([returnVal.])
     setbaselineHousingTotal(returnVal.result_housing_total)
+    setHousingTotal(returnVal.result_housing_total)
     // setbaselinehousingResults(returnVal.)
     setbaselineGoodsTotal(returnVal.result_goods_total)
+    setGoodsTotal(returnVal.result_goods_total)
+    setserviceTotal(returnVal.result_services_total)
     // setbaselinegoodsResults(returnVal.)
     setbaselineserviceTotal(returnVal.result_services_total)
     setBaselineTotal(Math.round(returnVal.result_grand_total))
 
   }
 
-  function setallGrandtotals(returnVal){
-    setTransportTotal(returnVal.result_transport_total)
-    // settransportResults([returnVal.])
-    setFoodTotal(returnVal.result_food_total)
-    // setfoodResults([returnVal.])
-    setHousingTotal(returnVal.result_housing_total)
-    // sethousingResults(returnVal.)
-    setGoodsTotal(returnVal.result_goods_total)
-    // setgoodsResults(returnVal.)
-    setserviceTotal(returnVal.result_services_total)
+  function setallGrandtotals(returnVal, currpage){
     setGrandTotal(Math.round(returnVal.result_grand_total));
+    switch (currpage) {
+      case 1:
+        setTransportTotal(returnVal.result_transport_total)
+        // settransportResults([returnVal.])
+        break;
+      case 2: 
+        setFoodTotal(returnVal.result_food_total)
+        // setfoodResults([returnVal.])
+        break;
+      case 3:
+        setHousingTotal(returnVal.result_housing_total)
+        // sethousingResults(returnVal.)
+        break;
+      case 4:
+        setGoodsTotal(returnVal.result_goods_total)
+        // setgoodsResults(returnVal.)
+        setserviceTotal(returnVal.result_services_total)
+        break;
+    }
   }
 
   //Grabs from API
-  function APIgrab() {
+  function APIgrab(inputs, values) {
     /** Note From Yunhao(Cookie):
      * I've changed this to use the APILib
      * 
@@ -174,68 +264,40 @@ function Container() {
      * just now that during implemention its best to use appropriate type in the actual compnents, as
      * it tends to keep everything cleaner
      */
-    if (page == 0) {
+     console.log(values)
+
+    if (page == 0) {  
       let APICaller = new APILib.GET_DEFAULTS_AND_RESULTS_API();
       APICaller.callAPI({
-        input_location_mode: parseInt(inputLocationMode),
-        input_income: parseInt(inputIncome),
-        input_location: inputLocation,
-        input_size: parseInt(inputSize)
+        input_location_mode: parseInt(values[3]),
+        input_income: parseInt(values[0]),
+        input_location: values[1],
+        input_size: parseInt(values[2])
       }).then((returnVal) => {
         setallBaselines(returnVal);
-        setallGrandtotals(returnVal)
+        // setJsonFile(returnVal);
+        setallGrandtotals(returnVal, page)
       });
     } else {
+      
+      // let newobj = Object.assign({}, test)
       let footprintAPICaller = new APILib.COMPUTE_FOOTPRINT_API();
-      footprintAPICaller.callAPI({
-        input_location_mode: parseInt(inputLocationMode),
-        input_income: parseInt(inputIncome),
-        input_location: inputLocation,
-        input_size: parseInt(inputSize),
-        input_footprint_transportation_num_vehicles: parseInt(inputNumVehicles),
-        input_footprint_transportation_fuel1: parseInt(inputFuel1),
-        input_footprint_transportation_fuel2: parseInt(inputFuel2),
-        input_footprint_transportation_fuel3: parseInt(inputFuel3),
-        input_footprint_transportation_fuel4: parseInt(inputFuel4),
-        input_footprint_transportation_fuel5: parseInt(inputFuel5),
-        input_footprint_transportation_fuel6: parseInt(inputFuel6),
-        input_footprint_transportation_fuel7: parseInt(inputFuel7),
-        input_footprint_transportation_fuel8: parseInt(inputFuel8),
-        input_footprint_transportation_fuel9: parseInt(inputFuel9),
-        input_footprint_transportation_fuel10: parseInt(inputFuel10),
-        input_footprint_transportation_miles1: parseInt(inputMiles1),
-        input_footprint_transportation_miles2: parseInt(inputMiles2),
-        input_footprint_transportation_miles3: parseInt(inputMiles3),
-        input_footprint_transportation_miles4: parseInt(inputMiles4),
-        input_footprint_transportation_miles5: parseInt(inputMiles5),
-        input_footprint_transportation_miles6: parseInt(inputMiles6),
-        input_footprint_transportation_miles7: parseInt(inputMiles7),
-        input_footprint_transportation_miles8: parseInt(inputMiles8),
-        input_footprint_transportation_miles9: parseInt(inputMiles9),
-        input_footprint_transportation_miles10: parseInt(inputMiles10),
-        input_footprint_transportation_mpg1: parseInt(inputMpg1),
-        input_footprint_transportation_mpg2: parseInt(inputMpg2),
-        input_footprint_transportation_mpg3: parseInt(inputMpg3),
-        input_footprint_transportation_mpg4: parseInt(inputMpg4),
-        input_footprint_transportation_mpg5: parseInt(inputMpg5),
-        input_footprint_transportation_mpg6: parseInt(inputMpg6),
-        input_footprint_transportation_mpg7: parseInt(inputMpg7),
-        input_footprint_transportation_mpg8: parseInt(inputMpg8),
-        input_footprint_transportation_mpg9: parseInt(inputMpg9),
-        input_footprint_transportation_mpg10: parseInt(inputMpg10),
-        input_footprint_transportation_airextended: parseInt(inputAirExtended),
-        input_footprint_transportation_airlong: parseInt(inputAirLong),
-        input_footprint_transportation_airmedium: parseInt(inputAirMedium),
-        input_footprint_transportation_airshort: parseInt(inputAirShort)
-      }).then((returnVal) => {
+      for (let i = 0; i < inputs.length; i++){
+        inputObject[inputs[i]] = values[i];
+      }
+      // setTest(newobj);
+      console.log(inputObject)
+      footprintAPICaller.callAPI(inputObject).then((returnVal) => {
+        setallGrandtotals(returnVal, page)
         console.log(returnVal)
-        setallGrandtotals(returnVal)
       });
     }
+    return true
   }
 
   //Toggles Graph Overlay for results
   function toggleGraph() {
+    console.log(test);
     if (!graphDisplay) {
       document.body.style.overflow = "hidden";
     } else{
@@ -275,7 +337,7 @@ function Container() {
         </div>
       </div>
       <div className="carb-calc" id={findWidth(page)}>
-        <CarbCacl page={page} nextPage={nextPage} prevPage={prevPage} selectPage={selectPage} funcs={funcs[page]} toggleGraph={toggleGraph} baselineTotal = {baselineTotal} grandTotal={grandTotal}  allBaselineTotals={allBaselineTotals} allTotals={allTotals}> </CarbCacl>
+        <CarbCacl APIgrab={APIgrab} page={page} nextPage={nextPage} prevPage={prevPage} selectPage={selectPage} toggleGraph={toggleGraph} baselineTotal = {baselineTotal} grandTotal={grandTotal}  allBaselineTotals={allBaselineTotals} allTotals={allTotals}> </CarbCacl>
         {/* Could condense grandtotal to just accessing array */}
       </div>
       <Intro page={page}></Intro> 

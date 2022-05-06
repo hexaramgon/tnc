@@ -10,7 +10,7 @@ import CCgraph from '../components/Ccgraph';
 
 //Carbon Calculator Wrappper to render different pages and handle page changes
 //Also in charge of updating API Call whenever next button is clicked or navbar is clicked
-const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs, toggleGraph, grandTotal, baselineTotal,  allBaselineTotals,  allTotals }) => {
+const CarbCacl = ({APIgrab, page, nextPage, prevPage, selectPage, toggleGraph, grandTotal, baselineTotal,  allBaselineTotals,  allTotals }) => {
 
 
   //////////////////////////////////////////
@@ -39,10 +39,12 @@ const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs, toggleGraph, gra
 
     //Pages to render based on index 
     const pages = [
-    <Started nextPage = {nextPage} funcs = {funcs}></Started>, 
-    <Travel></Travel>, 
+    <Started APIgrab={APIgrab} nextPage = {nextPage}></Started>, 
+    // Started(nextPage, funcs[0]), 
+    <Travel  APIgrab = {APIgrab} ></Travel>, 
+    // Travel(funcs = funcs[1]),
     <Home></Home>, 
-    <Food></Food>, 
+    <Food APIgrab = {APIgrab}></Food>, 
     <Shopping></Shopping>, 
     <Results baselineTotal={baselineTotal} grandTotal={grandTotal} allBaselineTotals={allBaselineTotals} allTotals={allTotals}></Results>]
     
@@ -83,11 +85,11 @@ const CarbCacl = ({page, nextPage, prevPage, selectPage, funcs, toggleGraph, gra
       <div className="carb-calc-wrapper">
         {pages[page]}
       </div>
-      <div className={page!= 0 && page != 5 ? 'mobile-wrapper' : 'none'}>
+      <div className={page !== 0 && page !== 5 ? 'mobile-wrapper' : 'none'}>
          <CCgraph toggleGraph={toggleGraph} baselineTotal = {baselineTotal} grandTotal={grandTotal}></CCgraph> 
       </div>
-      <hr id = {page != 0 && page != 5 ? "" : "none" }></hr>
-      <div className="row-wrapper button-row" id = {page != 0 && page != 5 ? "" : "none" }>
+      <hr id = {page !== 0 && page !== 5 ? "" : "none" }></hr>
+      <div className="row-wrapper button-row" id = {page !== 0 && page !== 5 ? "" : "none" }>
         <button className="alternate-button" onClick={()=>prevPage()}>BACK</button>
         <button className="default-button" onClick={()=>nextPage()}>NEXT</button>
       </div>

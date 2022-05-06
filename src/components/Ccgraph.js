@@ -33,7 +33,7 @@ const CCGraph = ({toggleGraph, baselineTotal, grandTotal}) => {
 
   return (
       <div className="ccGraph">
-        {grandTotal == baselineTotal ? <h3>To start, we use your household location, size and income to estimate your average carbon footprint.</h3> : <h3>So far your footprint is <b> {stringdisplay(grandTotal, baselineTotal)}</b> than average</h3> }
+        {grandTotal === baselineTotal ? <h3>To start, we use your household location, size and income to estimate your average carbon footprint.</h3> : <h3>So far your footprint is <b> {stringdisplay(grandTotal, baselineTotal)}</b> than average</h3> }
         <div className="desktop">
           <div className="row-wrapper graph-row">
             <SmallGraph type = {1} size = {grandTotal} mobile={false}></SmallGraph>
